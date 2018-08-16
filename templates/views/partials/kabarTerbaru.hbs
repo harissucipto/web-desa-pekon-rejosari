@@ -1,0 +1,24 @@
+<div class="row" style="margin-top: 50px">
+  <div class="col-lg-12">
+    <div class="card">
+      <h5 class="card-header">Kabar Pekon Terbaru</h5>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="list-unstyled mb-0">
+              {{# each kabar }}
+              <li>
+                <a href="blog/post/{{slug}}">{{title}}</a>
+              </li>
+              {{/each}}
+              <li>
+                <a href="/blog">Lihat yang lainya</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

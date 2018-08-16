@@ -1,0 +1,36 @@
+{{!
+< default}} <!-- Header with Background Image -->
+  <header style="height: 50vh;
+	min-height: 300px;
+	background: url('{{{ imageBg home.gambarBackground.url }}}')
+		center center no-repeat scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="row" style="margin-bottom: 20px;">
+      <div class="col-sm-8">
+        <h3 class="mt-4">{{ home.judulHalaman }}</h3>
+
+        <p>{{{ home.keteranganHalaman }}}</p>
+
+      </div>
+      <div class="col-sm-4">
+        {{>kabarTerbaru}}
+      </div>
+    </div>
+    <!-- /.row -->
+    {{>halaman}}
+    <!-- /.row -->
+
+  </div>

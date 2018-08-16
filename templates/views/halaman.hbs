@@ -1,0 +1,31 @@
+{{!
+< default}} <!-- Header with Background Image -->
+  <header style="height: 50vh;
+	min-height: 300px;
+	background: url('{{{ imageBg halaman.gambarBackground.url }}}')
+		center center no-repeat scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="row justify-content-sm-center" style="margin-bottom: 20px;">
+      <div class="col-sm-10">
+        <h2 class="mt-4" style="text-align:center; margin-bottom: 30px;">{{{halaman.judulHalaman }}}</h2>
+
+        {{{ halaman.isiHalaman}}}
+
+      </div>
+    </div>
+
+
+  </div>

@@ -1,0 +1,17 @@
+<div class="row">
+  {{#each halaman }}
+  <div class="col-sm-4 my-4">
+    <div class="card">
+
+      <img class="card-img-top" src={{{isHaveImage this.image.url }}} width="300" height="200" alt="">
+      <div class="card-body">
+        <h4 class="card-title">{{ this.judulHalaman }}</h4>
+        <p class="card-text">{{{ this.keteranganHalaman }}}</p>
+      </div>
+      <div class="card-footer">
+        <a href="{{{isLinkBlog this.jenisHalaman }}}" class="btn btn-primary">Lihat {{ this.judulHalaman }}</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
