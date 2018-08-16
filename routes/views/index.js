@@ -1,22 +1,22 @@
-var keystone = require('keystone');
-const beranda = 'beranda';
+var keystone = require("keystone");
+const beranda = "beranda";
 
-exports = module.exports = function (req, res) {
+exports = module.exports = function(req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.section = 'home';
+	locals.section = "home";
 
 	// load Halman data
 
-	view.on('init', function (next) {
+	view.on("init", function(next) {
 		keystone
-			.list('Halaman')
+			.list("Halaman")
 			.model.find({ jenisHalaman: { $ne: beranda } })
-			.sort('urutan')
-			.exec(function (err, results) {
+			.sort("urutan")
+			.exec(function(err, results) {
 				locals.halaman = results;
 				next(err);
 			});
@@ -24,26 +24,30 @@ exports = module.exports = function (req, res) {
 		// get data beranda
 	});
 
-	view.on('init', function (next) {
+	view.on("init", function(next) {
 		keystone
-			.list('Halaman')
+			.list("Halaman")
 			.model.findOne({ jenisHalaman: beranda })
-			.exec(function (err, results) {
+			.exec(function(err, results) {
 				locals.home = results;
 				next(err);
 			});
 	});
 
-	view.on('init', function (next) {
+	view.on("init", function(next) {
 		keystone
-			.list('Post')
-			.model.find().limit(3).select('title slug')
-			.exec(function (err, results) {
+			.list("Post")
+			.model.find()
+			.where("state")
+			.equals("published")
+			.limit(3)
+			.select("title slug")
+			.exec(function(err, results) {
 				locals.kabar = results;
 				next(err);
 			});
 	});
 
 	// Render the view
-	view.render('index');
+	view.render("index");
 };
