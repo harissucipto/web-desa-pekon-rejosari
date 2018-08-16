@@ -15,6 +15,7 @@ var Halaman = new keystone.List('Halaman', {
 });
 
 Halaman.add({
+	urutan: {type: Number},
 	judulHalaman: { type: String, required: true },
 	jenisHalaman: { type: String, noedit: true },
 	gambarBackground: { type: Types.CloudinaryImage },
