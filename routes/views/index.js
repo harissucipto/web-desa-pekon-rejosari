@@ -15,6 +15,7 @@ exports = module.exports = function (req, res) {
 		keystone
 			.list('Halaman')
 			.model.find({ jenisHalaman: { $ne: beranda } })
+			.sort('urutan')
 			.exec(function (err, results) {
 				locals.halaman = results;
 				next(err);
