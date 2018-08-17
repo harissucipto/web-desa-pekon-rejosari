@@ -34,6 +34,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'cloudinary config': 'cloudinary://798271259117683:x90s3fi3lI_N6sDxfhO0kSRvfeU@pekonrejosari',
 });
 
 // Load your project's Models

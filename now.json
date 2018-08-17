@@ -1,7 +1,0 @@
-{
-  "env": {
-    "COOKIE_SECRET": "8c83cbef548727bd4142d6481e3ac8757b2ffef0e791d01631545cac74601428c43f795201e14717a089136178ef26b2bf01574d98993664c1ed1b4c6c0e4bdf",
-    "CLOUDINARY_UR": "cloudinary://798271259117683:x90s3fi3lI_N6sDxfhO0kSRvfeU@pekonrejosari",
-    "MONGOLAB_URI": "mongodb://rejosaripekon:123qweasd@ds125372.mlab.com:25372/pekon-rejosari"
-  }
-}
