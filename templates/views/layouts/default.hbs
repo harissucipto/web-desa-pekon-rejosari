@@ -3,12 +3,36 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
 
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {{#if data.post}} {{#if data.post.meta.title}}
+	<title>{{data.post.meta.title}}</title>
+	<meta property="og:title" content="{{data.post.meta.title}}">
+	<meta name="twitter:title" content="{{data.post.meta.title}}"> {{else}}
+	<title>{{data.post.title}}</title>
+	<meta property="og:title" content="{{data.post.title}}">
+	<meta name="twitter:title" content="{{data.post.title}}"> {{/if}} {{#if data.post.meta.description}}
+	<meta name="description" content="{{data.post.meta.description}}">
+	<meta property="og:description" content="{{data.post.meta.description}}">
+	<meta name="twitter:description" content="{{data.post.meta.description}}"> {{else}}
+	<meta name="description" content="{{data.post.content.brief}}">
+	<meta property="og:description" content="{{data.post.content.brief}}">
+	<meta name="twitter:description" content="{{data.post.content.brief}}"> {{/if}}
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="og:image" content="{{data.post.image.url}}">
+	<meta name="twitter:image:src" content="{{data.post.image.url}}">
+	<meta property="og:url" content="{{data.post.fullPostUrl}}">
+	<meta name="twitter:url" content="{{data.post.fullPostUrl}}">
+	<meta property="article:published_time" content="{{data.post.publishedDate}}"> {{# each data.post.categories}}
+	<meta property="article:tag" content="{{name}}"> {{/each}}
+	<meta name="keywords" content="{{# each data.post.categories}}{{name}}, {{/each}}"> {{else}}
 	<title>Pekon Rejosari</title>
+	<meta name="description" content="Website desa Pekon Rejosari Kecamatan Ulu Belu Provinsi Lampung Indonesia">
+	<meta property="og:image" content="{{baseUrl}}/images/logo.png">
+	<meta name="twitter:image:src" content="{{baseUrl}}/images/logo.png">
+	<meta name="keywords" content="Pekon Rejosari, Desa Rejosari Kecamatan Ulu Belu Tanggamus Lampung Indonesia, Desa Lampung, Kopi Lampung, Penghasil Kopi Lampung, Tanah Subur Lampung"> {{/if}}
 
 	<!-- Bootstrap core CSS -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
