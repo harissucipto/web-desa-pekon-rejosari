@@ -20,6 +20,7 @@ keystone.init({
 	'views': 'templates/views',
 	'view engine': '.hbs',
 
+
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
@@ -61,6 +62,16 @@ keystone.set('nav', {
 	users: 'users',
 });
 
+// set logo
+keystone.set('signin logo', '../images/logo.png');
+//
+keystone.set('admin path' , "perangkatpekon");
+
+keystone.set('admin credit', 'Powered by TIM KKN Rejosari-Beraksi 2018')
+
+keystone.set('login footer', 'Powered by TIM KKN Rejosari-Beraksi 2018')
+
+keystone.set('admin favicon', '../images/favicon.ico');
 // Start Keystone to connect to your database and initialise the web server
 
 

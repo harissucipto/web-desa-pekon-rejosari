@@ -19,6 +19,7 @@
  */
 
 var keystone = require('keystone');
+var sitemap = require('keystone-express-sitemap');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
 
@@ -35,6 +36,9 @@ var routes = {
 exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
+	app.get('/sitemap.xml', function(req, res) {
+		sitemap.create(keystone, req, res);
+	});
 	app.get('/halaman/galery', routes.views.ig);
 	app.get('/halaman/:slug', routes.views.halaman);
 	app.get('/blog/:category?', routes.views.blog);

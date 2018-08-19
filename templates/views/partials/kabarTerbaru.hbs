@@ -8,11 +8,11 @@
             <ul class="list-unstyled mb-0">
               {{# each kabar }}
               <li>
-                <a href="blog/post/{{slug}}">+ {{title}}</a>
+                <a href="blog/post/{{slug}}"> {{this._.publishedDate.format "DD/MM/YYYY"}} {{title}} &rarr; </a>
               </li>
               {{/each}}
               <li>
-                <a href="/blog">Lihat yang lainya</a>
+                <a href="/blog">Lihat yang lainya &rarr;</a>
               </li>
             </ul>
           </div>
